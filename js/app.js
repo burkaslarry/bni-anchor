@@ -19,15 +19,15 @@ const I18N = {
     gold: "金章會員",
     empty: "沒有符合的會員，請試其他關鍵字。",
     close: "關閉",
-    lang: "EN",
-    langAria: "切換為英文",
-    themeAria: "切換淺色或深色模式",
+    menuOpen: "開啟選單",
+    menuClose: "關閉選單",
+    themeLight: "淺色模式",
+    themeDark: "深色模式",
     footer: "BNI Anchor 分會會員名錄。資料來自 2026 年 9 月會員名單。",
     instagram: "Instagram",
     navMembers: "會員名單",
     navClients: "我們的客戶",
     navInquire: "查詢",
-    newsTitle: "最新動態",
     clientsTitle: "我們的客戶",
     inquireChapter: "BNI Anchor 分會",
     inquireTitle: "查詢",
@@ -43,7 +43,7 @@ const I18N = {
     waIntent: "我想來一次商務會議。",
     waTo: "謝謝。",
     metaDesc: "BNI Anchor 是香港的 BNI 星期四分會，2025 年 11 月 6 日成立。瀏覽會員名錄與客戶，或經 WhatsApp 預約商務會議。時間與地址請留意 Facebook 及 Instagram。",
-    navLocation: "商務會議",
+    navLocation: "聚會地點",
     locationTitle: "商務會議",
     locationLead: "BNI Anchor 是香港的 BNI 星期四分會，2025年 11月6日成立。服務本地專業人士與企業主，貫徹 Givers Gain ，互相引薦和轉介，尋求長期生意和合作機會。",
     locationWhen: "商務會議時間和地址請留意 Facebook / IG 專頁"
@@ -68,15 +68,15 @@ const I18N = {
     gold: "Gold Club member",
     empty: "No members match that search. Try another keyword.",
     close: "Close",
-    lang: "中文",
-    langAria: "Switch to Traditional Chinese",
-    themeAria: "Toggle light or dark mode",
+    menuOpen: "Open menu",
+    menuClose: "Close menu",
+    themeLight: "Light mode",
+    themeDark: "Dark mode",
     footer: "BNI Anchor chapter member directory. Information from the September 2026 member list.",
     instagram: "Instagram",
     navMembers: "Members",
     navClients: "Our Clients",
     navInquire: "Enquire",
-    newsTitle: "Latest news",
     clientsTitle: "Our Clients",
     inquireChapter: "BNI Anchor Chapter",
     inquireTitle: "Enquire",
@@ -92,7 +92,7 @@ const I18N = {
     waIntent: "I would like to visit a business meeting.",
     waTo: "Please follow up with Frankie Ng. Thank you.",
     metaDesc: "BNI Anchor is a Thursday BNI chapter in Hong Kong, founded on 6 November 2025. Browse members and clients, or book a visitor meeting on WhatsApp. Check Facebook and Instagram for time and venue.",
-    navLocation: "Business meeting",
+    navLocation: "Location",
     locationTitle: "Business meeting",
     locationLead: "BNI Anchor is a Thursday BNI chapter in Hong Kong, founded on 6 November 2025. We serve local professionals and business owners, practising Givers Gain through introductions and referrals for long-term business and collaboration.",
     locationWhen: "Please check our Facebook and Instagram pages for meeting time and address."
@@ -126,10 +126,13 @@ function applyChrome() {
   $("#lead").textContent = t("lead");
   $("#search").placeholder = t("search");
   $("#search").setAttribute("aria-label", t("searchAria"));
-  $("#lang-btn").textContent = t("lang");
-  $("#lang-btn").setAttribute("aria-label", t("langAria"));
-  $("#theme-btn").setAttribute("aria-label", t("themeAria"));
-  $("#theme-btn").setAttribute("aria-pressed", state.theme === "dark" ? "true" : "false");
+  $("#theme-light").textContent = t("themeLight");
+  $("#theme-dark").textContent = t("themeDark");
+  $("#theme-light").setAttribute("aria-pressed", state.theme === "light" ? "true" : "false");
+  $("#theme-dark").setAttribute("aria-pressed", state.theme === "dark" ? "true" : "false");
+  $("#lang-en").setAttribute("aria-pressed", state.lang === "en" ? "true" : "false");
+  $("#lang-zh").setAttribute("aria-pressed", state.lang === "zh" ? "true" : "false");
+  $("#menu-btn").setAttribute("aria-label", $("#float-nav").classList.contains("open") ? t("menuClose") : t("menuOpen"));
   $("#stat-count").innerHTML = `<b>${window.BNI_MEMBERS.length}</b> ${state.lang === "zh" ? "位會員" : "members"}`;
   $("#stat-cats").textContent = t("categories");
   $("#stat-day").textContent = t("thursday");
@@ -139,7 +142,6 @@ function applyChrome() {
   $("#nav-clients").textContent = t("navClients");
   $("#nav-location").textContent = t("navLocation");
   $("#nav-inquire").textContent = t("navInquire");
-  $("#news-title").textContent = t("newsTitle");
   $("#clients-title").textContent = t("clientsTitle");
   $("#inquire-chapter").textContent = t("inquireChapter");
   $("#inquire-title").textContent = t("inquireTitle");
@@ -224,7 +226,7 @@ function cardHTML(m) {
     <article class="card-wrap">
       <button class="card" type="button" data-id="${m.id}" style="--cat:${cat.color}">
         <div class="card-top">
-          <img class="avatar" src="images/members/${m.id}.png?v=20260911c" alt="${m.name}" width="84" height="84">
+          <img class="avatar" src="images/members/${m.id}.png?v=20260911h" alt="${m.name}" width="84" height="84">
           <div>
             <div class="badges">
               <span class="badge">${catLabel}</span>
@@ -273,7 +275,7 @@ function openModal(id) {
     <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="member-title" style="--cat:${cat.color}">
       <button class="modal-close" type="button" data-close aria-label="${t("close")}">×</button>
       <div class="modal-head">
-        <img src="images/members/${m.id}.png?v=20260911c" alt="${m.name}" width="120" height="120">
+        <img src="images/members/${m.id}.png?v=20260911h" alt="${m.name}" width="120" height="120">
         <div>
           <div class="badges">
             <span class="badge">${catLabel}</span>
@@ -310,6 +312,18 @@ function render() {
   if (state.activeId) openModal(state.activeId);
 }
 
+function setMenuOpen(open) {
+  const nav = $("#float-nav");
+  const btn = $("#menu-btn");
+  const panel = $("#float-panel");
+  const backdrop = $("#float-backdrop");
+  nav.classList.toggle("open", open);
+  btn.setAttribute("aria-expanded", open ? "true" : "false");
+  btn.setAttribute("aria-label", open ? t("menuClose") : t("menuOpen"));
+  panel.hidden = !open;
+  backdrop.hidden = !open;
+}
+
 function init() {
   applyChrome();
   render();
@@ -336,20 +350,53 @@ function init() {
     if (e.target.id === "modal" || e.target.closest("[data-close]")) closeModal();
   });
 
-  $("#lang-btn").addEventListener("click", () => {
-    state.lang = state.lang === "zh" ? "en" : "zh";
+  $("#menu-btn").addEventListener("click", () => {
+    setMenuOpen(!$("#float-nav").classList.contains("open"));
+  });
+
+  $("#float-backdrop").addEventListener("click", () => setMenuOpen(false));
+
+  $("#float-panel").addEventListener("click", (e) => {
+    const link = e.target.closest("a[href^='#']");
+    if (!link) return;
+    e.preventDefault();
+    const href = link.getAttribute("href");
+    const target = document.querySelector(href);
+    setMenuOpen(false);
+    requestAnimationFrame(() => {
+      target?.scrollIntoView({ behavior: "smooth", block: "start" });
+      history.pushState(null, "", href);
+    });
+  });
+
+  $("#lang-en").addEventListener("click", () => {
+    state.lang = "en";
     localStorage.setItem("bni-lang", state.lang);
     render();
   });
 
-  $("#theme-btn").addEventListener("click", () => {
-    state.theme = state.theme === "dark" ? "light" : "dark";
+  $("#lang-zh").addEventListener("click", () => {
+    state.lang = "zh";
+    localStorage.setItem("bni-lang", state.lang);
+    render();
+  });
+
+  $("#theme-light").addEventListener("click", () => {
+    state.theme = "light";
+    localStorage.setItem("bni-theme", state.theme);
+    applyChrome();
+  });
+
+  $("#theme-dark").addEventListener("click", () => {
+    state.theme = "dark";
     localStorage.setItem("bni-theme", state.theme);
     applyChrome();
   });
 
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeModal();
+    if (e.key !== "Escape") return;
+    closeModal();
+    setMenuOpen(false);
   });
 
   $("#inquire-form").addEventListener("submit", (e) => {
