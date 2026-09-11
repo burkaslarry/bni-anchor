@@ -15,6 +15,7 @@ window.BNI_MEMBERS = [
   },
   {
     id: "larry-lo",
+    instagram: ["larrylo.xp"],
     name: "Larry Lo",
     companyZh: "InnovateXP Limited",
     companyEn: "InnovateXP Limited",
@@ -29,6 +30,7 @@ window.BNI_MEMBERS = [
   },
   {
     id: "jimmy-ho",
+    instagram: ["vgather.hk"],
     name: "Jimmy Ho",
     companyZh: "Quick Time System",
     companyEn: "Quick Time System",
@@ -55,6 +57,7 @@ window.BNI_MEMBERS = [
   },
   {
     id: "leo-lam",
+    instagram: ["leolam2108"],
     name: "Leo Lam",
     companyZh: "Hive Personnel Limited",
     companyEn: "Hive Personnel Limited",
@@ -67,6 +70,7 @@ window.BNI_MEMBERS = [
   },
   {
     id: "peter-chan",
+    instagram: ["peterpanda"],
     name: "Dr. Peter Chan",
     companyZh: "Mike So, Joseph Lau & Co",
     companyEn: "Mike So, Joseph Lau & Co",
@@ -81,6 +85,7 @@ window.BNI_MEMBERS = [
   },
   {
     id: "ace-nau",
+    instagram: ["citybuild_interiordesign"],
     name: "Ace Nau",
     companyZh: "Citybuild Interior Design",
     companyEn: "城投工程有限公司",
@@ -109,6 +114,7 @@ window.BNI_MEMBERS = [
   },
   {
     id: "andrew-fong",
+    instagram: ["matchmakingwatches"],
     name: "Andrew Fong",
     companyZh: "Team Richly Limited",
     companyEn: "Team Richly Limited",
@@ -135,6 +141,7 @@ window.BNI_MEMBERS = [
   },
   {
     id: "zoe-wu",
+    instagram: ["zoefloral_hk"],
     name: "Zoe Wu",
     companyZh: "Zoe Floral",
     companyEn: "Zoe Floral",
@@ -173,6 +180,7 @@ window.BNI_MEMBERS = [
   },
   {
     id: "ryan-lau",
+    instagram: ["littlebowl_daily", "ryanlph06"],
     name: "Ryan Lau",
     companyZh: "產前護膚安檢 App",
     companyEn: "Prenatal Skincare Check App",
@@ -185,6 +193,7 @@ window.BNI_MEMBERS = [
   },
   {
     id: "yoko-sin",
+    instagram: ["ciliwungltd"],
     name: "Yoko Sin",
     companyZh: "吉利旺有限公司",
     companyEn: "吉利旺有限公司",
@@ -197,6 +206,7 @@ window.BNI_MEMBERS = [
   },
   {
     id: "jessica-cheung",
+    instagram: ["mingmingee_ig"],
     name: "Jessica Cheung",
     companyZh: "MingMingEE Baby Care",
     companyEn: "MingMingEE Baby Care",
@@ -212,6 +222,7 @@ window.BNI_MEMBERS = [
   },
   {
     id: "hayes-lam",
+    instagram: ["hayes_lam_lkh", "helenbububu_", "carlysuen1122"],
     name: "Hayes Lam",
     companyZh: "Space Studio",
     companyEn: "Space Studio",
@@ -224,6 +235,7 @@ window.BNI_MEMBERS = [
   },
   {
     id: "one-chan",
+    instagram: ["chanonephoto"],
     name: "One Chan",
     companyZh: "Chan One Photo",
     companyEn: "Chan One Photo",
@@ -236,6 +248,7 @@ window.BNI_MEMBERS = [
   },
   {
     id: "stan-wang",
+    instagram: ["yc.stan", "taipeiizakaya"],
     name: "Stan Wang",
     companyZh: "台北人居酒屋 Taipei Izakaya",
     companyEn: "Taipei Izakaya",
@@ -274,6 +287,7 @@ window.BNI_MEMBERS = [
   },
   {
     id: "eric-ho",
+    instagram: ["snapfitnesstkw", "nomader_eric"],
     name: "Eric Ho",
     companyZh: "Nomader Consultancy Ltd",
     companyEn: "Nomader Consultancy Ltd",
@@ -286,6 +300,7 @@ window.BNI_MEMBERS = [
   },
   {
     id: "wade-suen",
+    instagram: ["wadesuen"],
     name: "Dr. Wade Suen",
     companyZh: "InnoMeds",
     companyEn: "InnoMeds",
@@ -298,6 +313,7 @@ window.BNI_MEMBERS = [
   },
   {
     id: "frankie-ng",
+    instagram: ["frankieng668"],
     name: "Frankie Ng",
     companyZh: "M&J Business Limited",
     companyEn: "M&J Business Limited",
@@ -312,6 +328,7 @@ window.BNI_MEMBERS = [
   },
   {
     id: "kate-woo",
+    instagram: ["woopuisan.ec", "coolicesan"],
     name: "Kate Woo",
     companyZh: "言醫坊",
     companyEn: "言醫坊",
@@ -324,6 +341,7 @@ window.BNI_MEMBERS = [
   },
   {
     id: "ck-chow",
+    instagram: ["azure_skin_hk"],
     name: "Dr. C.K. Chow",
     companyZh: "Brightmed Company Limited",
     companyEn: "Brightmed Company Limited",
@@ -348,6 +366,7 @@ window.BNI_MEMBERS = [
   },
   {
     id: "steves-tse",
+    instagram: ["stevestcf_soulhard", "sphere_island.hk"],
     name: "Steves Tse",
     companyZh: "Sphere Island",
     companyEn: "Sphere Island",
@@ -446,6 +465,7 @@ window.BNI_MEMBERS = [
   },
   {
     id: "li-ka-wai",
+    instagram: ["wealth.kawaii"],
     name: "Li Ka Wai",
     companyZh: "妃蓍安老服務有限公司",
     companyEn: "妃蓍安老服務有限公司",
@@ -458,6 +478,7 @@ window.BNI_MEMBERS = [
   },
   {
     id: "cyrus-koo",
+    instagram: ["whysokoo"],
     name: "Cyrus Koo",
     companyZh: "YF Life Insurance International Limited",
     companyEn: "YF Life Insurance International Limited",
@@ -472,6 +493,7 @@ window.BNI_MEMBERS = [
   },
   {
     id: "richard-wong",
+    instagram: ["richardwong.slash"],
     name: "Richard Wong",
     companyZh: "AIA",
     companyEn: "AIA",

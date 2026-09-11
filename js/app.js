@@ -42,18 +42,11 @@ const I18N = {
     waIntro: "BNI Anchor 分會查詢",
     waIntent: "我想來一次商務會議。",
     waTo: "謝謝。",
-    metaDesc: "BNI Anchor 是香港九龍的 BNI 星期四分會，聚會於彌敦道 380 號香港逸東酒店。瀏覽會員名錄與客戶，或經 WhatsApp 預約商務會議。",
-    navLocation: "聚會地點",
-    locationTitle: "聚會地點",
-    locationLead: "BNI Anchor 是香港九龍的 BNI 星期四分會，服務本地專業人士與企業主，以 Givers Gain® 互相轉介生意。",
-    locationWhereLabel: "地址",
-    locationStreet: "香港逸東酒店 2 樓 Maggie，彌敦道 380 號",
-    locationWhenLabel: "聚會時間",
-    locationWhen: "逢星期四早上（商務交流約 06:30，會議 07:00–09:00）",
-    locationAreaLabel: "服務地區",
-    locationArea: "香港、九龍、油尖旺、佐敦、油麻地",
-    locationContactLabel: "聯絡",
-    locationMap: "在 Google 地圖開啟"
+    metaDesc: "BNI Anchor 是香港的 BNI 星期四分會，2025 年 11 月 6 日成立。瀏覽會員名錄與客戶，或經 WhatsApp 預約商務會議。時間與地址請留意 Facebook 及 Instagram。",
+    navLocation: "商務會議",
+    locationTitle: "商務會議",
+    locationLead: "BNI Anchor 是香港的 BNI 星期四分會，2025年 11月6日成立。服務本地專業人士與企業主，貫徹 Givers Gain ，互相引薦和轉介，尋求長期生意和合作機會。",
+    locationWhen: "商務會議時間和地址請留意 Facebook / IG 專頁"
   },
   en: {
     title: "BNI Anchor Member Directory",
@@ -98,18 +91,11 @@ const I18N = {
     waIntro: "BNI Anchor chapter enquiry",
     waIntent: "I would like to visit a business meeting.",
     waTo: "Please follow up with Frankie Ng. Thank you.",
-    metaDesc: "BNI Anchor is a Thursday BNI chapter in Kowloon, Hong Kong, meeting at Eaton HK, 380 Nathan Road. Browse members and clients, or book a visitor business meeting on WhatsApp.",
-    navLocation: "Location",
-    locationTitle: "Meeting location",
-    locationLead: "BNI Anchor is a Thursday BNI chapter in Kowloon, Hong Kong. Local professionals and business owners exchange referrals under Givers Gain®.",
-    locationWhereLabel: "Address",
-    locationStreet: "Room Maggie, 2/F, Eaton HK, 380 Nathan Road",
-    locationWhenLabel: "Meeting time",
-    locationWhen: "Every Thursday morning (networking from about 06:30, meeting 07:00–09:00)",
-    locationAreaLabel: "Area served",
-    locationArea: "Hong Kong, Kowloon, Yau Tsim Mong, Jordan, Yau Ma Tei",
-    locationContactLabel: "Contact",
-    locationMap: "Open in Google Maps"
+    metaDesc: "BNI Anchor is a Thursday BNI chapter in Hong Kong, founded on 6 November 2025. Browse members and clients, or book a visitor meeting on WhatsApp. Check Facebook and Instagram for time and venue.",
+    navLocation: "Business meeting",
+    locationTitle: "Business meeting",
+    locationLead: "BNI Anchor is a Thursday BNI chapter in Hong Kong, founded on 6 November 2025. We serve local professionals and business owners, practising Givers Gain through introductions and referrals for long-term business and collaboration.",
+    locationWhen: "Please check our Facebook and Instagram pages for meeting time and address."
   }
 };
 
@@ -165,14 +151,7 @@ function applyChrome() {
   $("#inquire-submit").textContent = t("inquireSubmit");
   $("#location-title").textContent = t("locationTitle");
   $("#location-lead").textContent = t("locationLead");
-  $("#location-where-label").textContent = t("locationWhereLabel");
-  $("#location-street").textContent = t("locationStreet");
-  $("#location-when-label").textContent = t("locationWhenLabel");
   $("#location-when").textContent = t("locationWhen");
-  $("#location-area-label").textContent = t("locationAreaLabel");
-  $("#location-area").textContent = t("locationArea");
-  $("#location-contact-label").textContent = t("locationContactLabel");
-  $("#location-map").textContent = t("locationMap");
   setMeta('meta[name="description"]', t("metaDesc"));
   setMeta('meta[property="og:title"]', t("docTitle"));
   setMeta('meta[property="og:description"]', t("metaDesc"));
@@ -204,6 +183,7 @@ function matches(member) {
     member.roleZh,
     member.roleEn,
     member.keywords,
+    member.instagram?.join(" "),
     cat?.zh,
     cat?.en
   ].filter(Boolean).join(" ").toLowerCase();
@@ -220,6 +200,19 @@ function renderChips() {
   }).join("");
 }
 
+function igButtons(handles) {
+  if (!handles?.length) return "";
+  return `<div class="ig-row">${handles.map((h) => `
+    <a class="ig-btn" href="https://www.instagram.com/${h}/" target="_blank" rel="noreferrer">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" stroke-width="1.7"/>
+        <circle cx="12" cy="12" r="4.1" stroke="currentColor" stroke-width="1.7"/>
+        <circle cx="17.4" cy="6.6" r="1.05" fill="currentColor"/>
+      </svg>
+      @${h}
+    </a>`).join("")}</div>`;
+}
+
 function cardHTML(m) {
   const cat = catMeta(m.category);
   const profession = state.lang === "zh" ? m.professionZh : m.professionEn;
@@ -228,22 +221,25 @@ function cardHTML(m) {
   const role = state.lang === "zh" ? m.roleZh : m.roleEn;
   const catLabel = state.lang === "zh" ? cat.zh : cat.en;
   return `
-    <button class="card" type="button" data-id="${m.id}" style="--cat:${cat.color}">
-      <div class="card-top">
-        <img class="avatar" src="images/members/${m.id}.png?v=20260911c" alt="${m.name}" width="84" height="84">
-        <div>
-          <div class="badges">
-            <span class="badge">${catLabel}</span>
-            ${role ? `<span class="badge role">${role}</span>` : ""}
-            ${m.gold ? `<span class="badge gold">${t("gold")}</span>` : ""}
+    <article class="card-wrap">
+      <button class="card" type="button" data-id="${m.id}" style="--cat:${cat.color}">
+        <div class="card-top">
+          <img class="avatar" src="images/members/${m.id}.png?v=20260911c" alt="${m.name}" width="84" height="84">
+          <div>
+            <div class="badges">
+              <span class="badge">${catLabel}</span>
+              ${role ? `<span class="badge role">${role}</span>` : ""}
+              ${m.gold ? `<span class="badge gold">${t("gold")}</span>` : ""}
+            </div>
+            <h2 class="card-name">${m.name}</h2>
+            <p class="profession">${profession}</p>
           </div>
-          <h2 class="card-name">${m.name}</h2>
-          <p class="profession">${profession}</p>
         </div>
-      </div>
-      ${company ? `<p class="company">${company}</p>` : ""}
-      <p class="intro">${intro}</p>
-    </button>
+        ${company ? `<p class="company">${company}</p>` : ""}
+        <p class="intro">${intro}</p>
+      </button>
+      ${igButtons(m.instagram)}
+    </article>
   `;
 }
 
@@ -293,6 +289,7 @@ function openModal(id) {
         <div class="field"><dt>${t("profession")}</dt><dd>${profession}</dd></div>
         <div class="field"><dt>${t("category")}</dt><dd>${catLabel}</dd></div>
         <div class="field"><dt>${t("intro")}</dt><dd>${intro}</dd></div>
+        ${m.instagram?.length ? `<div class="field"><dt>Instagram</dt><dd>${igButtons(m.instagram)}</dd></div>` : ""}
       </dl>
     </div>
   `;
