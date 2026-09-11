@@ -1,0 +1,30 @@
+# BNI Anchor Hong Kong
+
+> BNI Anchor is a Thursday BNI business-networking chapter in Kowloon, Hong Kong. Members exchange qualified referrals under Givers Gain®.
+
+BNI Anchor (BNI Anchor 香港分會) serves professionals and business owners across Hong Kong, especially Kowloon, Yau Tsim Mong, Jordan and Yau Ma Tei.
+
+## Facts
+
+- Chapter: BNI Anchor
+- Region: Hong Kong / Kowloon
+- Meeting day: Thursday morning
+- Venue: Eaton HK (香港逸東酒店), 380 Nathan Road, Yau Ma Tei, Kowloon
+- Room: Maggie, 2/F
+- Coordinates: 22.3081, 114.1718
+- Visitor enquiry WhatsApp: +852 6698 9778
+- Languages: Traditional Chinese, English
+- Official site: https://www.bni-anchor.com/
+- Instagram: https://www.instagram.com/bni.anchor.hk
+- Member directory: https://burkaslarry.github.io/bni-anchor/
+
+## Pages
+
+- [Member directory](https://burkaslarry.github.io/bni-anchor/#members): searchable bilingual list of chapter members, professions and companies
+- [Our clients](https://burkaslarry.github.io/bni-anchor/#clients): companies served by members
+- [Meeting location](https://burkaslarry.github.io/bni-anchor/#location): Kowloon venue and hours
+- [Enquire](https://burkaslarry.github.io/bni-anchor/#inquire): visitor form that opens WhatsApp to book a business meeting
+
+## How to visit
+
+Guests can submit first name, last name, phone, email and industry on the enquire form. The site opens WhatsApp to +852 6698 9778 with those details so the chapter treasurer can arrange a Thursday visitor meeting.

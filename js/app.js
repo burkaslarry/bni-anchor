@@ -1,7 +1,7 @@
 const I18N = {
   zh: {
     title: "BNI Anchor 會員名錄",
-    docTitle: "BNI Anchor 會員名錄",
+    docTitle: "BNI Anchor 香港分會｜星期四商務人脈網絡與會員名錄",
     kicker: "BNI Anchor 香港分會",
     headline: "Stronger. Bigger. We are <span>Anchor</span>.",
     lead: "一站式瀏覽 BNI Anchor 專業會員：姓名、行業、公司與業務介紹。可用關鍵字搜尋，亦可以業務類別篩選。每週四聚會，Givers Gain®。",
@@ -41,11 +41,23 @@ const I18N = {
     inquireError: "請填妥名字、姓氏、電話、電郵與公司行業。",
     waIntro: "BNI Anchor 分會查詢",
     waIntent: "我想來一次商務會議。",
-    waTo: "謝謝。"
+    waTo: "謝謝。",
+    metaDesc: "BNI Anchor 是香港九龍的 BNI 星期四分會，聚會於彌敦道 380 號香港逸東酒店。瀏覽會員名錄與客戶，或經 WhatsApp 預約商務會議。",
+    navLocation: "聚會地點",
+    locationTitle: "聚會地點",
+    locationLead: "BNI Anchor 是香港九龍的 BNI 星期四分會，服務本地專業人士與企業主，以 Givers Gain® 互相轉介生意。",
+    locationWhereLabel: "地址",
+    locationStreet: "香港逸東酒店 2 樓 Maggie，彌敦道 380 號",
+    locationWhenLabel: "聚會時間",
+    locationWhen: "逢星期四早上（商務交流約 06:30，會議 07:00–09:00）",
+    locationAreaLabel: "服務地區",
+    locationArea: "香港、九龍、油尖旺、佐敦、油麻地",
+    locationContactLabel: "聯絡",
+    locationMap: "在 Google 地圖開啟"
   },
   en: {
     title: "BNI Anchor Member Directory",
-    docTitle: "BNI Anchor Member Directory",
+    docTitle: "BNI Anchor Hong Kong | Thursday Business Networking Chapter",
     kicker: "BNI Anchor Hong Kong",
     headline: "Stronger. Bigger. We are <span>Anchor</span>.",
     lead: "Browse BNI Anchor members by name, profession, company and introduction. Search by keyword or filter by business category. We meet on Thursdays. Givers Gain®.",
@@ -85,7 +97,19 @@ const I18N = {
     inquireError: "Please complete first name, last name, phone, email and industry.",
     waIntro: "BNI Anchor chapter enquiry",
     waIntent: "I would like to visit a business meeting.",
-    waTo: "Please follow up with Frankie Ng. Thank you."
+    waTo: "Please follow up with Frankie Ng. Thank you.",
+    metaDesc: "BNI Anchor is a Thursday BNI chapter in Kowloon, Hong Kong, meeting at Eaton HK, 380 Nathan Road. Browse members and clients, or book a visitor business meeting on WhatsApp.",
+    navLocation: "Location",
+    locationTitle: "Meeting location",
+    locationLead: "BNI Anchor is a Thursday BNI chapter in Kowloon, Hong Kong. Local professionals and business owners exchange referrals under Givers Gain®.",
+    locationWhereLabel: "Address",
+    locationStreet: "Room Maggie, 2/F, Eaton HK, 380 Nathan Road",
+    locationWhenLabel: "Meeting time",
+    locationWhen: "Every Thursday morning (networking from about 06:30, meeting 07:00–09:00)",
+    locationAreaLabel: "Area served",
+    locationArea: "Hong Kong, Kowloon, Yau Tsim Mong, Jordan, Yau Ma Tei",
+    locationContactLabel: "Contact",
+    locationMap: "Open in Google Maps"
   }
 };
 
@@ -127,6 +151,7 @@ function applyChrome() {
   $("#ig-link").textContent = t("instagram");
   $("#nav-members").textContent = t("navMembers");
   $("#nav-clients").textContent = t("navClients");
+  $("#nav-location").textContent = t("navLocation");
   $("#nav-inquire").textContent = t("navInquire");
   $("#news-title").textContent = t("newsTitle");
   $("#clients-title").textContent = t("clientsTitle");
@@ -138,8 +163,29 @@ function applyChrome() {
   $("#label-email").textContent = t("labelEmail");
   $("#label-industry").textContent = t("labelIndustry");
   $("#inquire-submit").textContent = t("inquireSubmit");
+  $("#location-title").textContent = t("locationTitle");
+  $("#location-lead").textContent = t("locationLead");
+  $("#location-where-label").textContent = t("locationWhereLabel");
+  $("#location-street").textContent = t("locationStreet");
+  $("#location-when-label").textContent = t("locationWhenLabel");
+  $("#location-when").textContent = t("locationWhen");
+  $("#location-area-label").textContent = t("locationAreaLabel");
+  $("#location-area").textContent = t("locationArea");
+  $("#location-contact-label").textContent = t("locationContactLabel");
+  $("#location-map").textContent = t("locationMap");
+  setMeta('meta[name="description"]', t("metaDesc"));
+  setMeta('meta[property="og:title"]', t("docTitle"));
+  setMeta('meta[property="og:description"]', t("metaDesc"));
+  setMeta('meta[property="og:locale"]', state.lang === "zh" ? "zh_HK" : "en_US");
+  setMeta('meta[name="twitter:title"]', t("docTitle"));
+  setMeta('meta[name="twitter:description"]', t("metaDesc"));
   const note = $("#inquire-note");
   if (note && !note.classList.contains("error")) note.textContent = t("inquireNote");
+}
+
+function setMeta(selector, value) {
+  const el = document.querySelector(selector);
+  if (el) el.setAttribute("content", value);
 }
 
 function matches(member) {

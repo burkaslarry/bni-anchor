@@ -309,6 +309,38 @@ a { color: inherit; }
 .footer-inner { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 .footer-inner a { color: var(--red); }
 
+.location {
+  padding: 56px 0 64px;
+}
+.location-lead {
+  max-width: 70ch;
+  color: var(--muted);
+  margin: 0 0 28px;
+}
+.location h2 {
+  font-family: Fraunces, "Noto Serif TC", serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin: 0 0 12px;
+}
+.location h3 {
+  margin: 0 0 8px;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.location-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+.location address {
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.6;
+}
+.location a { color: var(--red); }
+
 .modal[hidden] { display: none; }
 .modal {
   position: fixed;
