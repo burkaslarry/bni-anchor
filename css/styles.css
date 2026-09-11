@@ -250,7 +250,12 @@ a { color: inherit; }
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-.badges { display: flex; flex-wrap: wrap; gap: 6px; }
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 6px;
+}
 .badge {
   font-size: 0.72rem;
   font-weight: 700;
@@ -624,6 +629,6 @@ a { color: inherit; }
 @media (max-width: 640px) {
   .hero { padding-top: 28px; }
   .modal-head { flex-direction: column; text-align: center; }
-  .badges { justify-content: center; }
+  .modal-head .badges { justify-content: center; }
   .banner img { height: 220px; }
 }
