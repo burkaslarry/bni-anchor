@@ -263,6 +263,7 @@ a { color: inherit; }
   height: 84px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center 46%;
   background: var(--bg-2);
   flex: none;
   box-shadow: 0 0 0 3px var(--surface), 0 0 0 5px var(--cat, var(--red));
@@ -386,6 +387,7 @@ a { color: inherit; }
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center 46%;
   box-shadow: 0 0 0 4px var(--surface), 0 0 0 7px var(--cat, var(--red));
 }
 .modal-card h2 { margin: 0 0 6px; }
