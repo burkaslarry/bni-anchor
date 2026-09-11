@@ -23,7 +23,25 @@ const I18N = {
     langAria: "切換為英文",
     themeAria: "切換淺色或深色模式",
     footer: "BNI Anchor 分會會員名錄。資料來自 2026 年 9 月會員名單。",
-    instagram: "Instagram"
+    instagram: "Instagram",
+    navMembers: "會員名單",
+    navClients: "我們的客戶",
+    navInquire: "查詢",
+    newsTitle: "最新動態",
+    clientsTitle: "我們的客戶",
+    inquireChapter: "BNI Anchor 分會",
+    inquireTitle: "查詢",
+    labelFirst: "名字",
+    labelLast: "姓氏",
+    labelPhone: "電話",
+    labelEmail: "電子郵件",
+    labelIndustry: "公司行業",
+    inquireSubmit: "提交，想來一次商務會議",
+    inquireNote: "提交後會開啟 WhatsApp，資料會發送予BNI Anchor 司庫",
+    inquireError: "請填妥名字、姓氏、電話、電郵與公司行業。",
+    waIntro: "BNI Anchor 分會查詢",
+    waIntent: "我想來一次商務會議。",
+    waTo: "謝謝。"
   },
   en: {
     title: "BNI Anchor Member Directory",
@@ -49,7 +67,25 @@ const I18N = {
     langAria: "Switch to Traditional Chinese",
     themeAria: "Toggle light or dark mode",
     footer: "BNI Anchor chapter member directory. Information from the September 2026 member list.",
-    instagram: "Instagram"
+    instagram: "Instagram",
+    navMembers: "Members",
+    navClients: "Our Clients",
+    navInquire: "Enquire",
+    newsTitle: "Latest news",
+    clientsTitle: "Our Clients",
+    inquireChapter: "BNI Anchor Chapter",
+    inquireTitle: "Enquire",
+    labelFirst: "First name",
+    labelLast: "Last name",
+    labelPhone: "Phone",
+    labelEmail: "Email",
+    labelIndustry: "Company / industry",
+    inquireSubmit: "Submit — I'd like to visit a business meeting",
+    inquireNote: "Submit opens WhatsApp with your details to BNI Anchor Treasurer",
+    inquireError: "Please complete first name, last name, phone, email and industry.",
+    waIntro: "BNI Anchor chapter enquiry",
+    waIntent: "I would like to visit a business meeting.",
+    waTo: "Please follow up with Frankie Ng. Thank you."
   }
 };
 
@@ -89,6 +125,21 @@ function applyChrome() {
   $("#stat-day").textContent = t("thursday");
   $("#footer-copy").textContent = t("footer");
   $("#ig-link").textContent = t("instagram");
+  $("#nav-members").textContent = t("navMembers");
+  $("#nav-clients").textContent = t("navClients");
+  $("#nav-inquire").textContent = t("navInquire");
+  $("#news-title").textContent = t("newsTitle");
+  $("#clients-title").textContent = t("clientsTitle");
+  $("#inquire-chapter").textContent = t("inquireChapter");
+  $("#inquire-title").textContent = t("inquireTitle");
+  $("#label-first").textContent = t("labelFirst");
+  $("#label-last").textContent = t("labelLast");
+  $("#label-phone").textContent = t("labelPhone");
+  $("#label-email").textContent = t("labelEmail");
+  $("#label-industry").textContent = t("labelIndustry");
+  $("#inquire-submit").textContent = t("inquireSubmit");
+  const note = $("#inquire-note");
+  if (note && !note.classList.contains("error")) note.textContent = t("inquireNote");
 }
 
 function matches(member) {
@@ -256,6 +307,38 @@ function init() {
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeModal();
+  });
+
+  $("#inquire-form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const first = $("#inq-first").value.trim();
+    const last = $("#inq-last").value.trim();
+    const phone = $("#inq-phone").value.trim();
+    const email = $("#inq-email").value.trim();
+    const industry = $("#inq-industry").value.trim();
+    const note = $("#inquire-note");
+    if (!first || !last || !phone || !email || !industry) {
+      note.classList.add("error");
+      note.textContent = t("inquireError");
+      return;
+    }
+    note.classList.remove("error");
+    note.textContent = t("inquireNote");
+    const lines = [
+      t("waIntro"),
+      "",
+      t("waIntent"),
+      "",
+      `${t("labelFirst")}: ${first}`,
+      `${t("labelLast")}: ${last}`,
+      `${t("labelPhone")}: ${phone}`,
+      `${t("labelEmail")}: ${email}`,
+      `${t("labelIndustry")}: ${industry}`,
+      "",
+      t("waTo")
+    ];
+    const url = `https://wa.me/85266989778?text=${encodeURIComponent(lines.join("\n"))}`;
+    window.open(url, "_blank", "noopener");
   });
 }
 

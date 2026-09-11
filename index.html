@@ -26,6 +26,11 @@
           <span class="brand-sub">ANCHOR</span>
         </span>
       </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#members" id="nav-members">會員名單</a>
+        <a href="#clients" id="nav-clients">我們的客戶</a>
+        <a href="#inquire" id="nav-inquire">查詢</a>
+      </nav>
       <div class="header-actions">
         <button class="icon-btn" id="lang-btn" type="button">EN</button>
         <button class="icon-btn" id="theme-btn" type="button" aria-pressed="false">
@@ -52,6 +57,10 @@
       </div>
     </section>
 
+    <section class="banner" aria-label="BNI Anchor chapter photo">
+      <img src="images/photos/group.jpg" alt="BNI Anchor 會員大合照" width="1600" height="500">
+    </section>
+
     <section class="toolbar" aria-label="Filters">
       <div class="search">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -63,8 +72,69 @@
       <div class="chips" id="chips"></div>
     </section>
 
-    <section class="grid" id="grid" aria-live="polite"></section>
+    <section id="members">
+      <div class="grid" id="grid" aria-live="polite"></div>
+    </section>
     <p class="empty" id="empty" hidden></p>
+
+    <section class="news" id="news">
+      <div class="section-inner news-inner">
+        <h2 id="news-title">最新動態</h2>
+        <figure>
+          <img src="images/photos/business-opportunity-day.jpeg" alt="BNI Anchor 商機日 Business Opportunity Day" width="900" height="1200">
+        </figure>
+      </div>
+    </section>
+
+    <section class="clients" id="clients">
+      <div class="section-inner">
+        <h2 id="clients-title">我們的客戶</h2>
+        <div class="client-grid">
+          <div class="client-card"><img src="images/clients/waterfall.png" alt="Waterfall"></div>
+          <div class="client-card"><img src="images/clients/davis-polk.jpg" alt="Davis Polk"></div>
+          <div class="client-card"><img src="images/clients/mtr.jpg" alt="MTR"></div>
+          <div class="client-card"><img src="images/clients/chubb.jpg" alt="Chubb 安達人壽"></div>
+          <div class="client-card"><img src="images/clients/citibank.jpg" alt="Citibank"></div>
+          <div class="client-card"><img src="images/clients/fitness-247.jpeg" alt="24/7 Fitness"></div>
+          <div class="client-card"><img src="images/clients/snap-fitness.jpg" alt="Snap Fitness 24/7"></div>
+          <div class="client-card"><img src="images/clients/axa.jpg" alt="AXA 安盛"></div>
+          <div class="client-card"><img src="images/clients/hktvmall.png" alt="HKTVmall"></div>
+          <div class="client-card"><img src="images/clients/lung-fung.jpeg" alt="龍豐集團 Lung Fung Group"></div>
+          <div class="client-card"><img src="images/clients/tapngo.jpg" alt="Tap &amp; Go"></div>
+          <div class="client-card"><img src="images/clients/kpay.png" alt="KPay"></div>
+          <div class="client-card"><img src="images/clients/hsbc.png" alt="HSBC 滙豐"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="inquire" id="inquire">
+      <div class="section-inner inquire-inner">
+        <div>
+          <p class="inquire-kicker" id="inquire-chapter">BNI Anchor 分會</p>
+          <h2 id="inquire-title">查詢</h2>
+          <form id="inquire-form" novalidate>
+            <label for="inq-first" id="label-first">名字</label>
+            <input id="inq-first" name="firstName" type="text" autocomplete="given-name" required>
+
+            <label for="inq-last" id="label-last">姓氏</label>
+            <input id="inq-last" name="lastName" type="text" autocomplete="family-name" required>
+
+            <label for="inq-phone" id="label-phone">電話</label>
+            <input id="inq-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+852" required>
+
+            <label for="inq-email" id="label-email">電子郵件</label>
+            <input id="inq-email" name="email" type="email" autocomplete="email" required>
+
+            <label for="inq-industry" id="label-industry">公司行業</label>
+            <input id="inq-industry" name="industry" type="text" autocomplete="organization-title" required>
+
+            <button type="submit" id="inquire-submit">提交，想來一次商務會議</button>
+            <p class="inquire-note" id="inquire-note"></p>
+          </form>
+        </div>
+        <img class="inquire-badge" src="images/photos/anchor-badge.png" alt="BNI Anchor EST. 2025 — Stronger! Bigger!">
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
