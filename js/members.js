@@ -1,17 +1,15 @@
 window.BNI_MEMBERS = [
   {
     id: "max-chan",
-    name: "Max Chan",
-    companyZh: "Mmatrix.io",
-    companyEn: "Mmatrix.io",
-    professionZh: "區塊鏈系統開發",
-    professionEn: "Blockchain System Development",
-    category: "it",
-    introZh: "專注區塊鏈系統開發，包括受澳洲 Perth Mint 監管的代幣化黃金：每枚代幣 1:1 對應實體黃金，結合國家級背書與 Web3 流通性，協助客戶以合規方式持有及轉移數位資產。",
-    introEn: "Builds blockchain systems including Perth Mint–regulated tokenised gold: each token is backed 1:1 by physical gold, combining government-grade custody with Web3 liquidity.",
-    lookingForZh: ["需要合規數位黃金／資產配置的投資者", "關注 Web3 與實體資產代幣化的企業"],
-    lookingForEn: ["Investors looking for compliant digital gold", "Businesses exploring tokenised real-world assets"],
-    keywords: "blockchain crypto web3 區塊鏈 黃金 gold perth mint mmatrix.io"
+    name: "Max Chan / William Lai",
+    companyZh: "",
+    companyEn: "",
+    professionZh: "台灣保健品",
+    professionEn: "Taiwan Health Products",
+    category: "medical",
+    introZh: "從事台灣保健品業務，為客戶引進及供應台灣研製的健康產品，支援日常保健需要。",
+    introEn: "Supplies Taiwan-made health products, helping clients source wellness goods for everyday care.",
+    keywords: "taiwan health 台灣 保健品 supplement wellness"
   },
   {
     id: "larry-lo",
@@ -22,10 +20,8 @@ window.BNI_MEMBERS = [
     professionZh: "AI 商業顧問",
     professionEn: "AI Business Consultant",
     category: "it",
-    roleZh: "網絡統籌",
-    roleEn: "Web Coordinator",
-    introZh: "InnovateXP Limited 創辦人，提供人工智能商業顧問服務，協助企業把 AI 應用於營運、客戶體驗與增長策略。現任 BNI Anchor 網絡統籌。",
-    introEn: "Founder of InnovateXP Limited. Advises businesses on putting AI to work in operations, customer experience and growth. Chapter web coordinator.",
+    introZh: "InnovateXP Limited 創辦人，提供人工智能商業顧問服務，協助企業把 AI 應用於營運、客戶體驗與增長策略。",
+    introEn: "Founder of InnovateXP Limited. Advises businesses on putting AI to work in operations, customer experience and growth.",
     keywords: "AI 人工智能 顧問 innovatexp consultant technology"
   },
   {
@@ -44,8 +40,20 @@ window.BNI_MEMBERS = [
     keywords: "POS 收銀 餐飲 restaurant 太興 翠華 譚仔 system"
   },
   {
-    id: "johnny-li",
-    name: "Johnny Li",
+    id: "joseph-lam",
+    name: "Joseph Lam",
+    companyZh: "",
+    companyEn: "",
+    professionZh: "系統升級及維護",
+    professionEn: "System Upgrade & Maintenance",
+    category: "it",
+    introZh: "提供系統升級及維護服務，協助企業更新、保養及穩定現有資訊系統，減少停機與營運風險。",
+    introEn: "Provides system upgrade and maintenance services, helping businesses keep IT systems current, stable and less prone to downtime.",
+    keywords: "IT system upgrade 系統 升級 維護 maintenance"
+  },
+  {
+    id: "chris-law",
+    name: "Chris Law",
     companyZh: "",
     companyEn: "",
     professionZh: "會計及審計",
@@ -121,10 +129,8 @@ window.BNI_MEMBERS = [
     professionZh: "手錶買賣",
     professionEn: "Watch Trading",
     category: "lifestyle",
-    roleZh: "活動統籌",
-    roleEn: "Event Coordinator",
-    introZh: "Team Richly Limited 從事手錶買賣，憑十多年鐘錶經驗為專業人士提供選錶、配套及維修方案。現任分會活動統籌。",
-    introEn: "Team Richly Limited trades watches and, with more than a decade in the trade, helps clients choose, service and look after timepieces. Chapter event coordinator.",
+    introZh: "Team Richly Limited 從事手錶買賣，憑十多年鐘錶經驗為專業人士提供選錶、配套及維修方案。",
+    introEn: "Team Richly Limited trades watches and, with more than a decade in the trade, helps clients choose, service and look after timepieces.",
     keywords: "watch 手錶 鐘錶 matchmaking richly luxury"
   },
   {
@@ -135,8 +141,10 @@ window.BNI_MEMBERS = [
     professionZh: "風水玄學",
     professionEn: "Feng Shui & Metaphysics",
     category: "lifestyle",
-    introZh: "木木師傅提供風水玄學顧問服務，為家居、辦公室及商業選址提供布局建議，協助客戶營造更順心的生活與營商環境。",
-    introEn: "木木師傅 advises on feng shui and metaphysics for homes, offices and business locations—helping clients shape spaces that support life and work.",
+    roleZh: "教育統籌",
+    roleEn: "Education Coordinator",
+    introZh: "木木師傅提供風水玄學顧問服務，為家居、辦公室及商業選址提供布局建議，協助客戶營造更順心的生活與營商環境。現任分會教育統籌。",
+    introEn: "木木師傅 advises on feng shui and metaphysics for homes, offices and business locations—helping clients shape spaces that support life and work. Chapter education coordinator.",
     keywords: "feng shui 風水 玄學 布局 metaphysics"
   },
   {
@@ -148,10 +156,8 @@ window.BNI_MEMBERS = [
     professionZh: "花藝師",
     professionEn: "Florist",
     category: "lifestyle",
-    roleZh: "來賓接待",
-    roleEn: "Visitor Host",
-    introZh: "持荷蘭花藝師專業資格，亦曾赴韓國學習婚禮花藝。作品包括花束、餐廳佈置、開張花籃及婚禮花藝，客戶包括國際學校及家長會。現任來賓接待。",
-    introEn: "A florist with Dutch professional credentials and wedding-floristry training in Korea. Creates bouquets, restaurant styling, opening baskets and wedding flowers. Chapter visitor host.",
+    introZh: "持荷蘭花藝師專業資格，亦曾赴韓國學習婚禮花藝。作品包括花束、餐廳佈置、開張花籃及婚禮花藝，客戶包括國際學校及家長會。",
+    introEn: "A florist with Dutch professional credentials and wedding-floristry training in Korea. Creates bouquets, restaurant styling, opening baskets and wedding flowers.",
     keywords: "florist flower 花 花藝 wedding 婚禮 zoe"
   },
   {
@@ -162,8 +168,10 @@ window.BNI_MEMBERS = [
     professionZh: "客製化歌曲訂製",
     professionEn: "Custom Song Commissioning",
     category: "lifestyle",
-    introZh: "花貓仔追夢有限公司提供客製化歌曲創作，為求婚、婚禮、生日、品牌活動度身訂造音樂，把故事寫進旋律。",
-    introEn: "花貓仔追夢有限公司 writes custom songs for proposals, weddings, birthdays and brand events—turning a story into music that lasts.",
+    roleZh: "來賓接待",
+    roleEn: "Visitor Host",
+    introZh: "花貓仔追夢有限公司提供客製化歌曲創作，為求婚、婚禮、生日、品牌活動度身訂造音樂，把故事寫進旋律。現任來賓接待。",
+    introEn: "花貓仔追夢有限公司 writes custom songs for proposals, weddings, birthdays and brand events—turning a story into music that lasts. Chapter visitor host.",
     keywords: "song music 歌曲 訂製 音樂 wedding 客製"
   },
   {
@@ -195,14 +203,14 @@ window.BNI_MEMBERS = [
     id: "yoko-sin",
     instagram: ["ciliwungltd"],
     name: "Yoko Sin",
-    companyZh: "吉利旺有限公司",
-    companyEn: "吉利旺有限公司",
-    professionZh: "僱傭服務",
-    professionEn: "Domestic Helper Services",
+    companyZh: "",
+    companyEn: "",
+    professionZh: "催債服務",
+    professionEn: "Debt Recovery",
     category: "lifestyle",
-    introZh: "吉利旺有限公司提供僱傭及職業介紹服務，協助家庭配對合適的家務助理，處理聘請、合約與日常支援。",
-    introEn: "吉利旺有限公司 is an employment agency that matches households with domestic helpers and supports hiring, contracts and day-to-day needs.",
-    keywords: "helper 僱傭 家務 外傭 maid agency 職業介紹"
+    introZh: "提供催債及應收帳款追討服務，協助企業處理逾期款項與收款安排。",
+    introEn: "Provides debt-recovery and receivables collection services, helping businesses follow up overdue payments.",
+    keywords: "debt recovery 催債 追數 collection 應收"
   },
   {
     id: "jessica-cheung",
@@ -236,7 +244,7 @@ window.BNI_MEMBERS = [
   {
     id: "one-chan",
     instagram: ["chanonephoto"],
-    name: "One Chan",
+    name: "Chan One",
     companyZh: "Chan One Photo",
     companyEn: "Chan One Photo",
     professionZh: "宣傳活動策劃及媒體公關",
@@ -255,10 +263,8 @@ window.BNI_MEMBERS = [
     professionZh: "台式居酒屋",
     professionEn: "Taiwanese Izakaya",
     category: "fb",
-    roleZh: "分會增長協調",
-    roleEn: "Growth Coordinator",
-    introZh: "台北人居酒屋位於佐敦，把台式料理結合居酒屋文化。Stan 擁有多年餐飲經驗，並持拿波里 Pizza 職人認證，現任分會增長協調。",
-    introEn: "Taipei Izakaya in Jordan brings Taiwanese cooking together with izakaya culture. Stan has decades in F&B, holds Neapolitan pizza credentials, and serves as chapter growth coordinator.",
+    introZh: "台北人居酒屋位於佐敦，把台式料理結合居酒屋文化。Stan 擁有多年餐飲經驗，並持拿波里 Pizza 職人認證。",
+    introEn: "Taipei Izakaya in Jordan brings Taiwanese cooking together with izakaya culture. Stan has decades in F&B and holds Neapolitan pizza credentials.",
     keywords: "izakaya 居酒屋 台灣 餐飲 pizza 佐敦 restaurant"
   },
   {
@@ -278,12 +284,12 @@ window.BNI_MEMBERS = [
     name: "Kevin Cheung",
     companyZh: "",
     companyEn: "",
-    professionZh: "中式海鮮酒家",
-    professionEn: "Chinese Seafood Restaurant",
-    category: "fb",
-    introZh: "經營中式海鮮酒家，為宴會、家庭聚餐及商務宴請提供新鮮海鮮與粵式菜式，講求出品與待客之道。",
-    introEn: "Runs a Chinese seafood restaurant for banquets, family gatherings and business dinners—fresh seafood and Cantonese cooking with attentive hospitality.",
-    keywords: "seafood 海鮮 酒家 中菜 restaurant 粵菜 banquet"
+    professionZh: "餐飲牌照及工程",
+    professionEn: "F&B Licensing & Engineering",
+    category: "construction",
+    introZh: "從事餐飲牌照及工程，協助食肆處理牌照申請、場地工程與合規安排，讓餐廳更快合法開業及營運。",
+    introEn: "Handles F&B licensing and related engineering works, helping restaurants with permits, venue works and compliance so they can open and operate legally.",
+    keywords: "F&B licence 餐飲 牌照 工程 restaurant permit"
   },
   {
     id: "eric-ho",
@@ -320,10 +326,10 @@ window.BNI_MEMBERS = [
     professionZh: "日經眼藥水及護眼素",
     professionEn: "Eye Drops & Eye Care",
     category: "medical",
-    roleZh: "財務秘書",
-    roleEn: "Treasurer",
-    introZh: "M&J Business 代理日經眼藥水及護眼素，產品為香港衛生署登記中藥眼藥水，不含類固醇及防腐劑，關注糖尿病眼、黃斑及白內障護理。現任財務秘書。",
-    introEn: "M&J Business supplies Japanese-formula eye drops and eye-care products registered with Hong Kong’s Department of Health as Chinese medicine, without steroids or preservatives. Chapter treasurer.",
+    roleZh: "分會增長及協調員",
+    roleEn: "Growth Coordinator",
+    introZh: "M&J Business 代理日經眼藥水及護眼素，產品為香港衛生署登記中藥眼藥水，不含類固醇及防腐劑，關注糖尿病眼、黃斑及白內障護理。現任分會增長及協調員。",
+    introEn: "M&J Business supplies Japanese-formula eye drops and eye-care products registered with Hong Kong’s Department of Health as Chinese medicine, without steroids or preservatives. Chapter growth coordinator.",
     keywords: "eye 眼 眼藥水 護眼 cataract 白內障 treasurer 財務"
   },
   {
@@ -342,14 +348,16 @@ window.BNI_MEMBERS = [
   {
     id: "ck-chow",
     instagram: ["azure_skin_hk"],
-    name: "Dr. C.K. Chow",
+    name: "Dr. CK Chow",
     companyZh: "Brightmed Company Limited",
     companyEn: "Brightmed Company Limited",
     professionZh: "醫學美容",
     professionEn: "Medical Aesthetics",
     category: "medical",
-    introZh: "家庭醫學專科醫生，於中環開設雅確皮膚中心（Brightmed），提供提升、收緊及美白等醫學美容療程。",
-    introEn: "A specialist in family medicine. Runs Brightmed’s skin centre in Central, offering medical-aesthetic treatments for lifting, tightening and brightening.",
+    roleZh: "副主席",
+    roleEn: "Vice President",
+    introZh: "家庭醫學專科醫生，於中環開設雅確皮膚中心（Brightmed），提供提升、收緊及美白等醫學美容療程。現任分會副主席。",
+    introEn: "A specialist in family medicine. Runs Brightmed’s skin centre in Central, offering medical-aesthetic treatments for lifting, tightening and brightening. Chapter vice president.",
     keywords: "aesthetics 醫學美容 皮膚 brightmed 中環 doctor"
   },
   {
@@ -373,8 +381,10 @@ window.BNI_MEMBERS = [
     professionZh: "健身教練",
     professionEn: "Fitness Coach",
     category: "medical",
-    introZh: "Sphere Island 健身教練，為個人及小組提供訓練計劃，協助學員建立力量、體能與可持續的運動習慣。",
-    introEn: "A fitness coach at Sphere Island, designing personal and small-group training so clients build strength, conditioning and habits they can keep.",
+    roleZh: "活動統籌",
+    roleEn: "Event Coordinator",
+    introZh: "Sphere Island 健身教練，為個人及小組提供訓練計劃，協助學員建立力量、體能與可持續的運動習慣。現任分會活動統籌。",
+    introEn: "A fitness coach at Sphere Island, designing personal and small-group training so clients build strength, conditioning and habits they can keep. Chapter event coordinator.",
     keywords: "fitness coach 健身 教練 trainer gym sphere"
   },
   {
@@ -438,6 +448,30 @@ window.BNI_MEMBERS = [
     keywords: "English 英語 兒童 教育 tutor kids world family"
   },
   {
+    id: "quinnie-lee",
+    name: "Quinnie Lee",
+    companyZh: "",
+    companyEn: "",
+    professionZh: "教育中心",
+    professionEn: "Education Centre",
+    category: "education",
+    introZh: "營運教育中心，為學員提供學習支援與課程安排，協助小朋友及家庭建立持續的學習習慣。",
+    introEn: "Runs an education centre, supporting students and families with learning programmes and a more consistent study routine.",
+    keywords: "education centre 教育中心 補習 tutor school"
+  },
+  {
+    id: "ka-yi-chan",
+    name: "Ka Yi Chan",
+    companyZh: "",
+    companyEn: "",
+    professionZh: "家庭醫學連鎖診所",
+    professionEn: "Family Medicine Clinic Chain",
+    category: "medical",
+    introZh: "從事家庭醫學連鎖診所，為社區提供基層醫療、家庭醫生服務與持續健康跟進。",
+    introEn: "Works with a family-medicine clinic chain, providing community primary care and ongoing health follow-up.",
+    keywords: "family medicine 家庭醫學 診所 clinic GP"
+  },
+  {
     id: "bill-chung",
     name: "Bill Chung",
     companyZh: "BOC Life",
@@ -457,10 +491,10 @@ window.BNI_MEMBERS = [
     professionZh: "個人保險（理財及儲蓄）",
     professionEn: "Personal Insurance (Wealth & Savings)",
     category: "finance",
-    roleZh: "教育統籌",
-    roleEn: "Education Coordinator",
-    introZh: "友邦保險顧問，專注個人理財、儲蓄及保障策劃，為家庭與企業客戶提供一站式財富管理。百萬圓桌會終身會員，現任分會教育統籌。",
-    introEn: "An AIA advisor focused on personal wealth, savings and protection. Offers one-stop planning for families and business owners. MDRT life member and chapter education coordinator.",
+    roleZh: "網絡統籌",
+    roleEn: "Web Coordinator",
+    introZh: "友邦保險顧問，專注個人理財、儲蓄及保障策劃，為家庭與企業客戶提供一站式財富管理。百萬圓桌會終身會員，現任分會網絡統籌。",
+    introEn: "An AIA advisor focused on personal wealth, savings and protection. Offers one-stop planning for families and business owners. MDRT life member and chapter web coordinator.",
     keywords: "AIA 保險 insurance MDRT 理財 儲蓄 教育"
   },
   {
@@ -485,10 +519,10 @@ window.BNI_MEMBERS = [
     professionZh: "個人保險（健康及保障）",
     professionEn: "Personal Insurance (Health & Protection)",
     category: "finance",
-    roleZh: "新會員輔導",
-    roleEn: "Mentor Coordinator",
-    introZh: "萬通保險顧問，專注個人健康及保障。入行多年，處理過大量理賠個案，強調 24/7 可靠服務。現任新會員輔導。",
-    introEn: "A YF Life advisor focused on personal health and protection. Known for responsive, reliable service and claims support. Chapter mentor coordinator for new members.",
+    roleZh: "財務秘書",
+    roleEn: "Treasurer",
+    introZh: "萬通保險顧問，專注個人健康及保障。入行多年，處理過大量理賠個案，強調 24/7 可靠服務。現任財務秘書。",
+    introEn: "A YF Life advisor focused on personal health and protection. Known for responsive, reliable service and claims support. Chapter treasurer.",
     keywords: "YF 萬通 insurance 保險 健康 保障 mentor 輔導"
   },
   {
@@ -500,11 +534,11 @@ window.BNI_MEMBERS = [
     professionZh: "強積金",
     professionEn: "MPF",
     category: "finance",
-    roleZh: "副主席",
-    roleEn: "Vice President",
-    introZh: "友邦保險顧問，專注強積金策劃，服務初創至中型企業僱主及僱員。現任分會副主席。",
-    introEn: "An AIA advisor specialising in MPF planning for start-up and mid-size employers and their staff. Chapter vice president.",
-    keywords: "MPF 強積金 AIA 保險 vice president 副主席"
+    roleZh: "新會員輔導統籌",
+    roleEn: "Mentor Coordinator",
+    introZh: "友邦保險顧問，專注強積金策劃，服務初創至中型企業僱主及僱員。現任新會員輔導統籌。",
+    introEn: "An AIA advisor specialising in MPF planning for start-up and mid-size employers and their staff. Chapter mentor coordinator for new members.",
+    keywords: "MPF 強積金 AIA 保險 mentor 輔導"
   }
 ];
 

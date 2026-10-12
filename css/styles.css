@@ -417,11 +417,16 @@ a { color: inherit; }
 }
 .field dd { margin: 0; font-weight: 600; }
 
+.banner {
+  background: #f3efe8;
+  display: grid;
+  place-items: center;
+}
 .banner img {
-  width: 100%;
-  height: min(48vh, 460px);
-  object-fit: cover;
-  object-position: center 38%;
+  width: min(100%, 720px);
+  height: auto;
+  max-height: min(78vh, 820px);
+  object-fit: contain;
 }
 
 .clients h2, .inquire h2 {
@@ -630,5 +635,5 @@ a { color: inherit; }
   .hero { padding-top: 28px; }
   .modal-head { flex-direction: column; text-align: center; }
   .modal-head .badges { justify-content: center; }
-  .banner img { height: 220px; }
+  .banner img { max-height: 70vh; width: min(100%, 520px); }
 }

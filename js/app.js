@@ -23,7 +23,7 @@ const I18N = {
     menuClose: "關閉選單",
     themeLight: "淺色模式",
     themeDark: "深色模式",
-    footer: "BNI Anchor 分會會員名錄。資料來自 2026 年 9 月會員名單。",
+    footer: "BNI Anchor 分會會員名錄。資料來自 2026 年 10 月會員名單。",
     instagram: "Instagram",
     navMembers: "會員名單",
     navClients: "我們的客戶",
@@ -72,7 +72,7 @@ const I18N = {
     menuClose: "Close menu",
     themeLight: "Light mode",
     themeDark: "Dark mode",
-    footer: "BNI Anchor chapter member directory. Information from the September 2026 member list.",
+    footer: "BNI Anchor chapter member directory. Information from the October 2026 member list.",
     instagram: "Instagram",
     navMembers: "Members",
     navClients: "Our Clients",
@@ -226,7 +226,7 @@ function cardHTML(m) {
     <article class="card-wrap">
       <button class="card" type="button" data-id="${m.id}" style="--cat:${cat.color}">
         <div class="card-top">
-          <img class="avatar" src="images/members/${m.id}.png?v=20260911i" alt="${m.name}" width="84" height="84">
+          <img class="avatar" src="images/members/${m.id}.png?v=20261012a" alt="${m.name}" width="84" height="84">
           <div>
             <div class="badges">
               <span class="badge">${catLabel}</span>
@@ -275,7 +275,7 @@ function openModal(id) {
     <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="member-title" style="--cat:${cat.color}">
       <button class="modal-close" type="button" data-close aria-label="${t("close")}">×</button>
       <div class="modal-head">
-        <img src="images/members/${m.id}.png?v=20260911i" alt="${m.name}" width="120" height="120">
+        <img src="images/members/${m.id}.png?v=20261012a" alt="${m.name}" width="120" height="120">
         <div>
           <div class="badges">
             <span class="badge">${catLabel}</span>
