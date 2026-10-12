@@ -324,9 +324,20 @@ function setMenuOpen(open) {
   backdrop.hidden = !open;
 }
 
+function pinToTop() {
+  const root = document.documentElement;
+  const previous = root.style.scrollBehavior;
+  root.style.scrollBehavior = "auto";
+  window.scrollTo(0, 0);
+  root.style.scrollBehavior = previous;
+}
+
 function init() {
+  history.scrollRestoration = "manual";
+  pinToTop();
   applyChrome();
   render();
+  pinToTop();
 
   $("#search").addEventListener("input", (e) => {
     state.query = e.target.value;
