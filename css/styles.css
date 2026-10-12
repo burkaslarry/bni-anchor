@@ -417,16 +417,12 @@ a { color: inherit; }
 }
 .field dd { margin: 0; font-weight: 600; }
 
-.banner {
-  background: #f3efe8;
-  display: grid;
-  place-items: center;
-}
 .banner img {
-  width: min(100%, 720px);
+  width: 100%;
   height: auto;
-  max-height: min(78vh, 820px);
-  object-fit: contain;
+  max-height: min(72vh, 640px);
+  object-fit: cover;
+  object-position: center center;
 }
 
 .clients h2, .inquire h2 {
@@ -635,5 +631,5 @@ a { color: inherit; }
   .hero { padding-top: 28px; }
   .modal-head { flex-direction: column; text-align: center; }
   .modal-head .badges { justify-content: center; }
-  .banner img { max-height: 70vh; width: min(100%, 520px); }
+  .banner img { max-height: 42vh; }
 }
