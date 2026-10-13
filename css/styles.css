@@ -201,24 +201,40 @@ a { color: inherit; }
   gap: 18px;
   padding-bottom: 48px;
 }
-.card {
+.card-shell {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 24px;
   padding: 18px;
   box-shadow: var(--shadow);
+  transition: transform .18s ease, border-color .18s ease;
+}
+.card-shell:hover {
+  transform: translateY(-4px);
+  border-color: var(--red);
+}
+.card {
+  background: none;
+  border: 0;
+  padding: 0;
+  box-shadow: none;
   cursor: pointer;
   text-align: left;
   width: 100%;
   color: inherit;
+  font: inherit;
   display: grid;
   gap: 10px;
-  transition: transform .18s ease, border-color .18s ease;
+  align-content: start;
+  flex: 1;
 }
-.card:hover, .card:focus-visible {
-  transform: translateY(-4px);
-  border-color: var(--red);
-  outline: none;
+.card:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 4px;
 }
 .card-top {
   display: flex;
@@ -315,12 +331,13 @@ a { color: inherit; }
 }
 .social-btn:hover, .ig-btn:hover { border-color: var(--red); color: var(--red); }
 .card-wrap {
-  display: grid;
-  gap: 8px;
-  align-content: start;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .ig-row {
-  padding: 0 4px;
+  margin-top: auto;
+  padding-top: 10px;
 }
 .ig-btn {
   padding: 6px 10px;
@@ -420,9 +437,7 @@ a { color: inherit; }
 .banner img {
   width: 100%;
   height: auto;
-  max-height: min(72vh, 640px);
-  object-fit: cover;
-  object-position: center center;
+  object-fit: contain;
 }
 
 .clients h2, .inquire h2 {
@@ -631,5 +646,4 @@ a { color: inherit; }
   .hero { padding-top: 28px; }
   .modal-head { flex-direction: column; text-align: center; }
   .modal-head .badges { justify-content: center; }
-  .banner img { max-height: 42vh; }
 }

@@ -224,23 +224,25 @@ function cardHTML(m) {
   const catLabel = state.lang === "zh" ? cat.zh : cat.en;
   return `
     <article class="card-wrap">
-      <button class="card" type="button" data-id="${m.id}" style="--cat:${cat.color}">
-        <div class="card-top">
-          <img class="avatar" src="images/members/${m.id}.png?v=20261013a" alt="${m.name}" width="84" height="84">
-          <div>
-            <div class="badges">
-              <span class="badge">${catLabel}</span>
-              ${role ? `<span class="badge role">${role}</span>` : ""}
-              ${m.gold ? `<span class="badge gold">${t("gold")}</span>` : ""}
+      <div class="card-shell" style="--cat:${cat.color}" data-id="${m.id}">
+        <button class="card" type="button" data-id="${m.id}">
+          <div class="card-top">
+            <img class="avatar" src="images/members/${m.id}.png?v=20261013d" alt="${m.name}" width="84" height="84">
+            <div>
+              <div class="badges">
+                <span class="badge">${catLabel}</span>
+                ${role ? `<span class="badge role">${role}</span>` : ""}
+                ${m.gold ? `<span class="badge gold">${t("gold")}</span>` : ""}
+              </div>
+              <h2 class="card-name">${m.name}</h2>
+              <p class="profession">${profession}</p>
             </div>
-            <h2 class="card-name">${m.name}</h2>
-            <p class="profession">${profession}</p>
           </div>
-        </div>
-        ${company ? `<p class="company">${company}</p>` : ""}
-        <p class="intro">${intro}</p>
-      </button>
-      ${igButtons(m.instagram)}
+          ${company ? `<p class="company">${company}</p>` : ""}
+          <p class="intro">${intro}</p>
+        </button>
+        ${igButtons(m.instagram)}
+      </div>
     </article>
   `;
 }
@@ -275,7 +277,7 @@ function openModal(id) {
     <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="member-title" style="--cat:${cat.color}">
       <button class="modal-close" type="button" data-close aria-label="${t("close")}">×</button>
       <div class="modal-head">
-        <img src="images/members/${m.id}.png?v=20261013a" alt="${m.name}" width="120" height="120">
+        <img src="images/members/${m.id}.png?v=20261013d" alt="${m.name}" width="120" height="120">
         <div>
           <div class="badges">
             <span class="badge">${catLabel}</span>
@@ -353,6 +355,7 @@ function init() {
   });
 
   $("#grid").addEventListener("click", (e) => {
+    if (e.target.closest("a")) return;
     const card = e.target.closest("[data-id]");
     if (card) openModal(card.dataset.id);
   });
