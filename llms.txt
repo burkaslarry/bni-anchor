@@ -4,6 +4,8 @@
 
 BNI Anchor (BNI Anchor 香港分會) serves professionals and business owners across Hong Kong.
 
+Last updated: 2026-10-15. Member data: October 2026.
+
 ## Facts
 
 - Chapter: BNI Anchor
@@ -25,6 +27,8 @@ BNI Anchor (BNI Anchor 香港分會) serves professionals and business owners ac
 - [Business meeting](https://burkaslarry.github.io/bni-anchor/#location): chapter intro and social links for time and venue
 - [Enquire](https://burkaslarry.github.io/bni-anchor/#inquire): visitor form that opens WhatsApp to book a business meeting
 
+- [Frequently asked questions](https://burkaslarry.github.io/bni-anchor/#faq): chapter facts, meetings, visitor enquiries and member search
+
 ## How to visit
 
-Guests can submit first name, last name, phone, email and industry on the enquire form. The site opens WhatsApp to +852 6698 9778 with those details so the chapter treasurer can arrange a visitor meeting. Check Facebook and Instagram for the current meeting time and address.
+Guests can submit first name, last name, phone, email and industry on the enquire form. The site opens WhatsApp to +852 6698 9778 with those details for the visitor to review and send, so the chapter treasurer can arrange a visitor meeting. Check Facebook and Instagram for the current meeting time and address.
