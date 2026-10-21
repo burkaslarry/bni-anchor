@@ -400,16 +400,16 @@ window.BNI_MEMBERS = [
     keywords: "cardiology 心臟 專科 醫生 gleneagles heart"
   },
   {
-    id: "gigi-liu",
-    name: "Gigi Liu",
+    id: "tony-lau",
+    name: "Dr Tony Lau",
     companyZh: "",
     companyEn: "",
-    professionZh: "日本小顏術",
-    professionEn: "Japanese Facial Contouring",
+    professionZh: "兒科專科醫生",
+    professionEn: "Specialist in Paediatrics",
     category: "medical",
-    introZh: "提供日本小顏術服務，以非手術手法改善面部輪廓與線條，為客戶打造更立體、更精神的面相。",
-    introEn: "Offers Japanese facial-contouring techniques that refine the face without surgery, helping clients achieve a more defined, refreshed look.",
-    keywords: "小顏 面部 美容 facial contouring japan 日本"
+    introZh: "兒科專科醫生，為兒童及家庭提供專科診治與健康跟進。",
+    introEn: "A paediatrics specialist providing specialist care and health follow-up for children and families.",
+    keywords: "paediatrics pediatric 兒科 專科 醫生 children 兒童 tony lau 醫療"
   },
   {
     id: "enoch-hung",

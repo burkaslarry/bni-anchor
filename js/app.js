@@ -227,7 +227,7 @@ function cardHTML(m) {
       <div class="card-shell" style="--cat:${cat.color}" data-id="${m.id}">
         <button class="card" type="button" data-id="${m.id}">
           <div class="card-top">
-            <img class="avatar" src="images/members/${m.id}.png?v=20261015a" alt="${m.name}" width="84" height="84" loading="lazy" decoding="async">
+            <img class="avatar" src="images/members/${m.id}.png?v=20261021a" alt="${m.name}" width="84" height="84" loading="lazy" decoding="async">
             <div>
               <div class="badges">
                 <span class="badge">${catLabel}</span>
@@ -277,7 +277,7 @@ function openModal(id) {
     <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="member-title" style="--cat:${cat.color}">
       <button class="modal-close" type="button" data-close aria-label="${t("close")}">×</button>
       <div class="modal-head">
-        <img src="images/members/${m.id}.png?v=20261015a" alt="${m.name}" width="120" height="120">
+        <img src="images/members/${m.id}.png?v=20261021a" alt="${m.name}" width="120" height="120">
         <div>
           <div class="badges">
             <span class="badge">${catLabel}</span>
