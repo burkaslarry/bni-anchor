@@ -1,17 +1,5 @@
 window.BNI_MEMBERS = [
   {
-    id: "max-chan",
-    name: "Max Chan / William Lai",
-    companyZh: "",
-    companyEn: "",
-    professionZh: "台灣保健品",
-    professionEn: "Taiwan Health Products",
-    category: "medical",
-    introZh: "從事台灣保健品業務，為客戶引進及供應台灣研製的健康產品，支援日常保健需要。",
-    introEn: "Supplies Taiwan-made health products, helping clients source wellness goods for everyday care.",
-    keywords: "taiwan health 台灣 保健品 supplement wellness"
-  },
-  {
     id: "larry-lo",
     instagram: ["larrylo.xp"],
     name: "Larry Lo",
@@ -290,6 +278,18 @@ window.BNI_MEMBERS = [
     introZh: "從事餐飲牌照及工程，協助食肆處理牌照申請、場地工程與合規安排，讓餐廳更快合法開業及營運。",
     introEn: "Handles F&B licensing and related engineering works, helping restaurants with permits, venue works and compliance so they can open and operate legally.",
     keywords: "F&B licence 餐飲 牌照 工程 restaurant permit"
+  },
+  {
+    id: "max-chan",
+    name: "Max Chan / William Lai",
+    companyZh: "",
+    companyEn: "",
+    professionZh: "醫療保健品",
+    professionEn: "Medical Health Products",
+    category: "medical",
+    introZh: "從事醫療保健品業務，為客戶引進及供應健康產品，支援日常保健需要。",
+    introEn: "Supplies medical and health products, helping clients source wellness goods for everyday care.",
+    keywords: "medical health 醫療 保健品 supplement wellness"
   },
   {
     id: "eric-ho",
