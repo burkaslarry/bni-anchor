@@ -191,14 +191,14 @@ window.BNI_MEMBERS = [
     id: "yoko-sin",
     instagram: ["ciliwungltd"],
     name: "Yoko Sin",
-    companyZh: "",
-    companyEn: "",
-    professionZh: "催債服務",
-    professionEn: "Debt Recovery",
+    companyZh: "吉利旺有限公司",
+    companyEn: "CILIWUNG LIMITED",
+    professionZh: "僱傭中心",
+    professionEn: "Employment Agency",
     category: "lifestyle",
-    introZh: "提供催債及應收帳款追討服務，協助企業處理逾期款項與收款安排。",
-    introEn: "Provides debt-recovery and receivables collection services, helping businesses follow up overdue payments.",
-    keywords: "debt recovery 催債 追數 collection 應收"
+    introZh: "吉利旺有限公司提供外傭配對及僱傭中介服務，細心了解家庭需要，協助僱主挑選合適家傭，並透過培訓及聘後跟進，支援家居照顧與日常生活。",
+    introEn: "CILIWUNG LIMITED matches families with domestic helpers based on their household needs, with helper training and follow-up support after hiring to assist with care and everyday home life.",
+    keywords: "僱傭中心 外傭 家傭 配對 培訓 吉利旺 ciliwung employment agency domestic helper family care"
   },
   {
     id: "jessica-cheung",
