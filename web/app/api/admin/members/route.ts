@@ -1,4 +1,5 @@
 import { requireAdmin } from "@/lib/auth";
+import { hasMongo } from "@/lib/db";
 import { deleteMember, listAllMembers, upsertMember } from "@/lib/members";
 import { isCategoryId } from "@/lib/members";
 import type { MemberInput } from "@/lib/types";
@@ -10,8 +11,13 @@ export async function GET() {
   } catch {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
-  const members = await listAllMembers();
-  return NextResponse.json({ members });
+  try {
+    const members = await listAllMembers();
+    return NextResponse.json({ members });
+  } catch (e) {
+    const message = e instanceof Error ? e.message : "Failed to load members";
+    return NextResponse.json({ error: message }, { status: 503 });
+  }
 }
 
 export async function POST(request: Request) {
@@ -21,14 +27,25 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
+  if (!hasMongo()) {
+    return NextResponse.json({ error: "MONGODB_URI is not configured" }, { status: 503 });
+  }
+
   const body = (await request.json()) as Partial<MemberInput>;
-  if (!body.slug || !body.name || !body.category || !isCategoryId(body.category)) {
-    return NextResponse.json({ error: "Invalid member payload" }, { status: 400 });
+  const slug = typeof body.slug === "string" ? body.slug.trim().toLowerCase() : "";
+  if (!slug || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) {
+    return NextResponse.json(
+      { error: "Slug is required (lowercase letters, numbers, hyphens only, e.g. raymond-kuo)" },
+      { status: 400 },
+    );
+  }
+  if (!body.name?.trim() || !body.category || !isCategoryId(body.category)) {
+    return NextResponse.json({ error: "Name and category are required" }, { status: 400 });
   }
 
   const input: MemberInput = {
-    slug: body.slug,
-    name: body.name,
+    slug,
+    name: body.name.trim(),
     companyZh: body.companyZh ?? "",
     companyEn: body.companyEn ?? "",
     professionZh: body.professionZh ?? "",
@@ -49,8 +66,13 @@ export async function POST(request: Request) {
     published: body.published !== false,
   };
 
-  await upsertMember(input);
-  return NextResponse.json({ ok: true });
+  try {
+    await upsertMember(input);
+    return NextResponse.json({ ok: true });
+  } catch (e) {
+    const message = e instanceof Error ? e.message : "Failed to save member";
+    return NextResponse.json({ error: message }, { status: 503 });
+  }
 }
 
 export async function DELETE(request: Request) {
@@ -64,6 +86,14 @@ export async function DELETE(request: Request) {
   if (!slug) {
     return NextResponse.json({ error: "slug required" }, { status: 400 });
   }
-  await deleteMember(slug);
-  return NextResponse.json({ ok: true });
+  if (!hasMongo()) {
+    return NextResponse.json({ error: "MONGODB_URI is not configured" }, { status: 503 });
+  }
+  try {
+    await deleteMember(slug);
+    return NextResponse.json({ ok: true });
+  } catch (e) {
+    const message = e instanceof Error ? e.message : "Failed to delete member";
+    return NextResponse.json({ error: message }, { status: 503 });
+  }
 }

@@ -1,10 +1,11 @@
 import { MemberDirectory } from "@/components/MemberDirectory";
 import { listPublishedMembers } from "@/lib/members";
+import { getSiteBanner } from "@/lib/site-banner";
 
 export const revalidate = 60;
 
 export default async function HomePage() {
-  const members = await listPublishedMembers();
+  const [members, banner] = await Promise.all([listPublishedMembers(), getSiteBanner()]);
 
   return (
     <>
@@ -42,12 +43,7 @@ export default async function HomePage() {
         </section>
 
         <section className="banner" aria-label="BNI Anchor chapter leadership photo">
-          <img
-            src="/images/photos/group.jpg"
-            alt="BNI Anchor 第三屆領導團隊"
-            width={1024}
-            height={576}
-          />
+          <img src={banner.imageUrl} alt={banner.alt} width={1024} height={576} />
         </section>
 
         <MemberDirectory members={members} />

@@ -1,10 +1,14 @@
-import Link from "next/link";
+import { AdminBannerForm } from "@/components/AdminBannerForm";
 import { AdminLogoutButton } from "@/components/AdminLogoutButton";
 import { AdminSeedButton } from "@/components/AdminSeedButton";
 import { listAllMembers } from "@/lib/members";
+import { getSiteBanner } from "@/lib/site-banner";
+import Link from "next/link";
+
+export const dynamic = "force-dynamic";
 
 export default async function AdminHomePage() {
-  const members = await listAllMembers();
+  const [members, banner] = await Promise.all([listAllMembers(), getSiteBanner()]);
 
   return (
     <div className="admin-shell">
@@ -23,6 +27,8 @@ export default async function AdminHomePage() {
       </p>
 
       <AdminSeedButton />
+
+      <AdminBannerForm imageUrl={banner.imageUrl} alt={banner.alt} />
 
       <table className="admin-table">
         <thead>

@@ -2,6 +2,8 @@ import { AdminMemberForm } from "@/components/AdminMemberForm";
 import { listAllMembers } from "@/lib/members";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 export default async function NewMemberPage() {
   const all = await listAllMembers();
   const nextSortOrder = all.length;

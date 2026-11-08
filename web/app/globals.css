@@ -83,3 +83,57 @@
   gap: 12px;
   width: min(360px, 100%);
 }
+
+.admin-banner-card {
+  margin: 28px 0;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+  display: grid;
+  gap: 12px;
+}
+
+.admin-banner-card h2 {
+  margin: 0;
+  font-family: Fraunces, "Noto Serif TC", serif;
+  font-size: 1.35rem;
+}
+
+.admin-banner-hint,
+.admin-banner-hint-zh {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--muted);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.admin-banner-preview {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  aspect-ratio: 16 / 9;
+  background: #111;
+}
+
+.admin-banner-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.admin-banner-card label {
+  display: grid;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.admin-banner-card input[type="text"],
+.admin-banner-card input:not([type="file"]) {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font: inherit;
+  background: #fff;
+}

@@ -1,7 +1,13 @@
 import { MongoClient, type Db } from "mongodb";
 
-const uri = process.env.MONGODB_URI;
-const dbName = process.env.MONGODB_DB ?? "bni_anchor";
+function envValue(key: string): string | undefined {
+  const raw = process.env[key]?.trim();
+  if (!raw) return undefined;
+  return raw.replace(/^["']|["']$/g, "");
+}
+
+const uri = envValue("MONGODB_URI");
+const dbName = envValue("MONGODB_DB") ?? "bni_anchor";
 
 declare global {
   // eslint-disable-next-line no-var

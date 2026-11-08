@@ -5,6 +5,8 @@ import { notFound } from "next/navigation";
 
 type Props = { params: Promise<{ slug: string }> };
 
+export const dynamic = "force-dynamic";
+
 export default async function EditMemberPage({ params }: Props) {
   const { slug } = await params;
   const member = await getMemberBySlug(slug);

@@ -26,6 +26,24 @@ const emptyMember = (sortOrder: number): Member => ({
   updatedAt: new Date(),
 });
 
+function normalizeWebsiteUrl(raw: string): string {
+  const trimmed = raw.trim();
+  if (!trimmed) return "";
+  if (/^https?:\/\//i.test(trimmed)) return trimmed;
+  return `https://${trimmed}`;
+}
+
+async function readApiError(res: Response): Promise<string> {
+  const text = await res.text();
+  if (!text) return res.statusText || "Request failed";
+  try {
+    const json = JSON.parse(text) as { error?: string };
+    return json.error ?? text;
+  } catch {
+    return text.slice(0, 200) || "Request failed";
+  }
+}
+
 export function AdminMemberForm({ member, nextSortOrder }: Props) {
   const router = useRouter();
   const [form, setForm] = useState<Member>(member ?? emptyMember(nextSortOrder));
@@ -37,25 +55,55 @@ export function AdminMemberForm({ member, nextSortOrder }: Props) {
     setBusy(true);
     setStatus("");
     try {
+      const slug = form.slug.trim().toLowerCase();
+      if (!slug || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) {
+        throw new Error("Slug is required (e.g. raymond-kuo — lowercase, hyphens only)");
+      }
+      if (!form.name.trim()) {
+        throw new Error("Name is required");
+      }
+      if (file && !slug) {
+        throw new Error("Enter a slug before uploading an avatar");
+      }
+
       let avatarUrl = form.avatarUrl;
-      if (file && form.slug) {
+      if (file && slug) {
         const body = new FormData();
         body.set("file", file);
-        body.set("slug", form.slug);
+        body.set("slug", slug);
         const up = await fetch("/api/admin/upload-avatar", { method: "POST", body });
-        const upJson = (await up.json()) as { url?: string; error?: string };
-        if (!up.ok) throw new Error(upJson.error ?? "Upload failed");
+        const upText = await up.text();
+        if (!up.ok) {
+          try {
+            const err = JSON.parse(upText) as { error?: string };
+            throw new Error(err.error ?? "Upload failed");
+          } catch (e) {
+            if (e instanceof Error && e.message !== "Upload failed") throw e;
+            throw new Error(upText.slice(0, 200) || "Upload failed");
+          }
+        }
+        const upJson = JSON.parse(upText) as { url?: string };
         avatarUrl = upJson.url;
       }
+
+      const websiteUrl = normalizeWebsiteUrl(form.websiteUrl ?? "");
+      const payload = {
+        ...form,
+        slug,
+        name: form.name.trim(),
+        websiteUrl,
+        avatarUrl,
+        updatedAt: undefined,
+      };
 
       const res = await fetch("/api/admin/members", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, avatarUrl }),
+        body: JSON.stringify(payload),
       });
-      const json = (await res.json()) as { error?: string };
-      if (!res.ok) throw new Error(json.error ?? "Save failed");
+      if (!res.ok) throw new Error(await readApiError(res));
       setStatus("Saved.");
+      if (!member) router.push(`/admin/members/${slug}`);
       router.refresh();
     } catch (e) {
       setStatus(e instanceof Error ? e.message : "Save failed");
@@ -80,6 +128,7 @@ export function AdminMemberForm({ member, nextSortOrder }: Props) {
         <input
           value={form.slug}
           disabled={Boolean(member)}
+          placeholder="raymond-kuo"
           onChange={(e) => setForm({ ...form, slug: e.target.value.trim().toLowerCase() })}
         />
       </label>
@@ -119,10 +168,12 @@ export function AdminMemberForm({ member, nextSortOrder }: Props) {
       <label>
         Website URL
         <input
-          type="url"
+          type="text"
+          inputMode="url"
+          autoComplete="url"
           value={form.websiteUrl ?? ""}
           onChange={(e) => setForm({ ...form, websiteUrl: e.target.value })}
-          placeholder="https://"
+          placeholder="example.com or https://…"
         />
       </label>
       <label>

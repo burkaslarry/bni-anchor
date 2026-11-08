@@ -46,13 +46,17 @@ export async function listPublishedMembers(): Promise<Member[]> {
   if (!hasMongo()) {
     return getSeedMembers().filter((m) => m.published);
   }
-  const db = await getDb();
-  const docs = await db
-    .collection<Member>(COLLECTION)
-    .find({ published: true })
-    .sort({ sortOrder: 1, name: 1 })
-    .toArray();
-  return docs;
+  try {
+    const db = await getDb();
+    const docs = await db
+      .collection<Member>(COLLECTION)
+      .find({ published: true })
+      .sort({ sortOrder: 1, name: 1 })
+      .toArray();
+    return docs;
+  } catch {
+    return getSeedMembers().filter((m) => m.published);
+  }
 }
 
 export async function listAllMembers(): Promise<Member[]> {
